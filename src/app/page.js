@@ -47,7 +47,9 @@ export default function Home() {
     <main className="flex h-screen w-screen flex-col items-center justify-start">
       {!start ? (
         <div className=" p-24">
-          <h1 className="text-xl mb-20">Selecione os Participantes</h1>
+          <h1 className="text-xl mb-20 text-center">
+            Selecione os Participantes
+          </h1>
           <div>
             <div className="flex gap-2 items-center mb-4">
               <input
