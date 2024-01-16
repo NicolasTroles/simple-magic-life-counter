@@ -41,6 +41,8 @@ export default function Home() {
     setLife(newLife + 1);
   };
 
+  const totalPlayers = Object.values(players)?.length;
+
   return (
     <main className="flex h-screen w-screen flex-col items-center justify-start">
       {!start ? (
@@ -172,7 +174,7 @@ export default function Home() {
               </label>
             </div>
             <button
-              disabled={Object.values(players).length < 2}
+              disabled={totalPlayers < 2}
               onClick={() => setStart(true)}
               className="bg-blue-500 w-full mt-10 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
@@ -181,10 +183,13 @@ export default function Home() {
           </div>
         </div>
       ) : (
-        <Position3
-          players={Object.values(players)}
-          updatePlayer={updatePlayer}
-        />
+        totalPlayers && (
+          <Position3
+            players={Object.values(players)}
+            updatePlayer={updatePlayer}
+            totalPlayers={totalPlayers}
+          />
+        )
       )}
     </main>
   );
