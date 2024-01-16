@@ -9,7 +9,7 @@ export default function Position3({ players, updatePlayer, totalPlayers }) {
     return (
       <div
         key={player.name}
-        className="text-2xl relative flex gap-2 flex-1 flex-col items-center justify-center w-full cursor-pointer py-5 px-4 bg-red-50"
+        className="text-2xl relative flex gap-5 flex-1 flex-row  items-center justify-center w-full cursor-pointer py-5 px-4 bg-red-50"
       >
         <Image
           src={`/${player.name}.png`}
@@ -19,10 +19,8 @@ export default function Position3({ players, updatePlayer, totalPlayers }) {
             player.totalLife <= 0 ? "opacity-50" : ""
           }`}
         />
-        <p className="text-4xl text-white z-20 px-6 py-4 bg-black/60">
-          {player.totalLife}
-        </p>
-        <div className="flex gap-5 w-full justify-center">
+
+        <div className="flex gap-5 justify-center">
           <button
             className="w-12 h-12 bg-white text-black z-30 text-3xl opacity-70"
             onClick={() => updatePlayer(player.name, player.totalLife - 1)}
@@ -36,6 +34,13 @@ export default function Position3({ players, updatePlayer, totalPlayers }) {
             +
           </button>
         </div>
+        <p
+          className={`text-4xl text-white z-20 px-6 py-4 ${
+            player.totalLife < 15 ? "bg-red-500/60" : "bg-black/60 "
+          }`}
+        >
+          {player.totalLife}
+        </p>
       </div>
     );
   };
