@@ -55,11 +55,9 @@ export default function Home() {
       style={{ height: windowHeight + "px" }}
     >
       {!start ? (
-        <div className="px-24 py-12">
-          <h1 className="text-xl mb-20 text-center">
-            Selecione os Participantes
-          </h1>
-          <div>
+        <div className="pt-12 px-6">
+          <h1 className="text-4xl text-center">Selecione os Participantes</h1>
+          <div className="px-24 py-12">
             <div className="flex gap-2 items-center mb-4">
               <input
                 className="w-10 h-10  cursor-pointer"
