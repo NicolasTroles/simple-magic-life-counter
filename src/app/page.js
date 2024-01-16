@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Image from "next/image";
 import Position3 from "./Position3/page";
@@ -11,6 +11,12 @@ export default function Home() {
   const [matheus, setMatheus] = useState(false);
   const [nicolas, setNicolas] = useState(false);
   const [willian, setWillian] = useState(false);
+
+  const [windowHeight, setWindowHeight] = useState(0);
+
+  useEffect(() => {
+    setWindowHeight(window.innerHeight);
+  }, []);
 
   const [players, setPlayers] = useState({});
 
@@ -46,7 +52,7 @@ export default function Home() {
   return (
     <main
       className="flex w-screen flex-col items-center justify-start"
-      style={{ height: window.innerHeight + "px" }}
+      style={{ height: windowHeight + "px" }}
     >
       {!start ? (
         <div className="px-24 py-12">
