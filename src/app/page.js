@@ -44,9 +44,12 @@ export default function Home() {
   const totalPlayers = Object.values(players)?.length;
 
   return (
-    <main className="flex h-screen w-screen flex-col items-center justify-start">
+    <main
+      className="flex w-screen flex-col items-center justify-start"
+      style={{ height: window.innerHeight + "px" }}
+    >
       {!start ? (
-        <div className=" p-24">
+        <div className="px-24 py-12">
           <h1 className="text-xl mb-20 text-center">
             Selecione os Participantes
           </h1>

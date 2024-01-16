@@ -41,7 +41,7 @@ export default function Position3({ players, updatePlayer, totalPlayers }) {
   };
 
   return (
-    <div className="w-full max-h-screen min-h-screen flex flex-col justify-between">
+    <div className="w-full max-h-full min-h-full flex flex-col justify-between">
       {players.map((player, index) => {
         if (index < totalPlayers / 2) {
           return (
