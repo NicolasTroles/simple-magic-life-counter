@@ -8,6 +8,11 @@ export const metadata = {
   description: "",
 };
 
+export const viewport = {
+  initialScale: 1,
+  width: "width=device-width,height=device-height initial-scale=1",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
