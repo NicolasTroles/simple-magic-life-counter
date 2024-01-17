@@ -22,13 +22,13 @@ export default function Position3({ players, updatePlayer, totalPlayers }) {
 
         <div className="flex gap-5 justify-center">
           <button
-            className="w-12 h-12 bg-white text-black z-30 text-3xl opacity-70"
+            className="w-16 h-16 bg-white text-black z-30 text-5xl opacity-70 touch-manipulation flex items-center justify-center active:bg-gray-500 transition-all"
             onClick={() => updatePlayer(player.name, player.totalLife - 1)}
           >
             -
           </button>
           <button
-            className="w-12 h-12 bg-white text-black z-30 text-3xl opacity-70"
+            className="w-16 h-16 bg-white text-black z-30 text-5xl opacity-70 touch-manipulation flex items-center justify-center active:bg-gray-500 transition-all"
             onClick={() => updatePlayer(player.name, player.totalLife + 1)}
           >
             +
