@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 
-export default function Position3({ players, updatePlayer, totalPlayers }) {
+export default function Position3({
+  players,
+  updatePlayer,
+  totalPlayers,
+  allUp,
+}) {
   if (!players) return <div></div>;
 
   const getPlayerContent = (player) => {
@@ -48,7 +53,7 @@ export default function Position3({ players, updatePlayer, totalPlayers }) {
   return (
     <div className="w-full max-h-full min-h-full flex flex-col justify-between">
       {players.map((player, index) => {
-        if (index < totalPlayers / 2) {
+        if (!allUp && index < totalPlayers / 2) {
           return (
             <div className="rotate-180 flex-1 flex" key={player.name}>
               {" "}

@@ -19,6 +19,7 @@ export default function Home() {
   }, []);
 
   const [players, setPlayers] = useState({});
+  const [allUp, setAllUp] = useState(false);
 
   const [start, setStart] = useState(false);
 
@@ -182,6 +183,24 @@ export default function Home() {
                 Willian Sanguinário
               </label>
             </div>
+            <div className="flex gap-2 items-center mt-8 mb-4">
+              <input
+                className="w-10 h-10  cursor-pointer"
+                type="checkbox"
+                id="allUp"
+                name="allUp"
+                value="allUp"
+                onChange={(e) => {
+                  setAllUp(e.target.checked);
+                }}
+              />
+              <label
+                className="text-2xl flex gap-2 items-center  cursor-pointer"
+                htmlFor="allUp"
+              >
+                Todos de pé
+              </label>
+            </div>
             <button
               disabled={totalPlayers < 2}
               onClick={() => setStart(true)}
@@ -194,6 +213,7 @@ export default function Home() {
       ) : (
         totalPlayers && (
           <Position3
+            allUp={allUp}
             players={Object.values(players)}
             updatePlayer={updatePlayer}
             totalPlayers={totalPlayers}
