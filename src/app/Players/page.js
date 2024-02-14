@@ -14,7 +14,7 @@ export default function Position3({
     return (
       <div
         key={player.name}
-        className="text-2xl relative flex gap-5 flex-1 flex-row  items-center justify-center w-full cursor-pointer py-5 px-4 bg-red-50"
+        className="text-2xl basis-1/2 relative flex gap-5 flex-1 flex-row  items-center justify-center w-full cursor-pointer py-5 px-4 bg-red-50"
       >
         <Image
           src={`/${player.name}.png`}
@@ -51,11 +51,11 @@ export default function Position3({
   };
 
   return (
-    <div className="w-full max-h-full min-h-full flex flex-col justify-between">
+    <div className="w-full max-h-full min-h-full flex-wrap flex justify-between">
       {players.map((player, index) => {
         if (!allUp && index < totalPlayers / 2) {
           return (
-            <div className="rotate-180 flex-1 flex" key={player.name}>
+            <div className="rotate-180 flex-1 flex basis-1/2" key={player.name}>
               {" "}
               {getPlayerContent(player)}
             </div>

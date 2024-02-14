@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 import Image from "next/image";
-import Position3 from "./Position3/page";
+import Players from "./Players/page";
 
 export default function Home() {
   const [erik, setErik] = useState(false);
@@ -212,7 +212,7 @@ export default function Home() {
         </div>
       ) : (
         totalPlayers && (
-          <Position3
+          <Players
             allUp={allUp}
             players={Object.values(players)}
             updatePlayer={updatePlayer}
