@@ -18,6 +18,10 @@ function soundEffectsDano(){
     let y = document.getElementById("audioVida")
     y.play();
   };
+  function soundEffectsMorte(){
+    let z = document.getElementById("audioMorte")
+    z.play();
+  };
   
   const getPlayerContent = (player) => {
     return (
@@ -40,6 +44,9 @@ function soundEffectsDano(){
             onClick={() => {
               updatePlayer(player.name, player.totalLife - 1);
               soundEffectsDano();
+              if (playertotalLife <=0){
+                soundEffectsMorte();
+              }
             }}
           >
             -
@@ -83,7 +90,9 @@ function soundEffectsDano(){
     <audio id="audioVida">  
 <source src="ganhoDeVida.mp3" type="audio/mpeg"></source>
     </audio>
-    
+    <audio id="audioMorte">  
+<source src="audioMorte.mp3" type="audio/mpeg"></source>
+    </audio>
     </div>
   );
 }
