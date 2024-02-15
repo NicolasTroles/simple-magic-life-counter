@@ -9,7 +9,16 @@ export default function Position3({
   allUp,
 }) {
   if (!players) return <div></div>;
-
+  
+function soundEffectsDano(){
+    let x = document.getElementById("audioDano")
+    x.play();
+  };
+  function soundEffectsVida(){
+    let y = document.getElementById("audioVida")
+    y.play();
+  };
+  
   const getPlayerContent = (player) => {
     return (
       <div
@@ -28,13 +37,18 @@ export default function Position3({
         <div className="flex gap-5 justify-center">
           <button
             className="w-16 h-16 bg-white text-black z-30 text-5xl opacity-70 touch-manipulation flex items-center justify-center active:bg-gray-500 transition-all"
-            onClick={() => updatePlayer(player.name, player.totalLife - 1)}
+            onClick={() => {
+              updatePlayer(player.name, player.totalLife - 1);
+              soundEffectsDano();
+            }}
           >
             -
           </button>
           <button
             className="w-16 h-16 bg-white text-black z-30 text-5xl opacity-70 touch-manipulation flex items-center justify-center active:bg-gray-500 transition-all"
-            onClick={() => updatePlayer(player.name, player.totalLife + 1)}
+             onClick={() => {updatePlayer(player.name, player.totalLife + 1);
+              soundEffectsVida()
+            }}
           >
             +
           </button>
@@ -63,6 +77,14 @@ export default function Position3({
         }
         return getPlayerContent(player);
       })}
+    <audio id="audioDano">  
+<source src="percaDeVida.mp3" type="audio/mpeg"></source>
+    </audio>
+    <audio id="audioVida">  
+<source src="ganhoDeVida.mp3" type="audio/mpeg"></source>
+    </audio>
+    
     </div>
   );
 }
+
